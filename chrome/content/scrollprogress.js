@@ -33,6 +33,8 @@ com.sppad.scrollprogress.Main = new function() {
         indicator.setAttribute('value', percentage + "%");
         
         let indicatorWrapper = document.getElementById('com_sppad_scrollProgress');
+        indicatorWrapper.style.transitionDuration = "";
+        indicatorWrapper.style.transitionDelay = "";
         indicatorWrapper.removeAttribute('hide');
         
         /**
@@ -50,6 +52,8 @@ com.sppad.scrollprogress.Main = new function() {
          * thing?), but want to make sure it works correctly
          */
         setTimeout(function() {
+            indicatorWrapper.style.transitionDuration = "0.3s";
+            indicatorWrapper.style.transitionDelay = "0.4s";
             indicatorWrapper.setAttribute('hide', 'fadeout');    
         }, 1);
     };

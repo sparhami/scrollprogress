@@ -1,4 +1,4 @@
-#com_sppad_scrollProgress {
+#com_sppad_scrollProgress[source="com_sppad_scrollprogress"] {
 	color: rgb(90, 90, 90);
 	opacity: .8;
 
@@ -15,10 +15,12 @@
     +2px +2px 0 white;
 }
 
-#com_sppad_scrollProgress[hide="fadeout"] {
+#com_sppad_scrollProgress[source="com_sppad_scrollprogress"][com_sppad_scrollprogress_hide="fadeout"] {
 	opacity: 0;
+	transition-duration: 0.3s;
+    transition-delay: 0.4s;
 }
 
-#com_sppad_scrollProgress[hide="now"] {
+#com_sppad_scrollProgress[source="com_sppad_scrollprogress"][com_sppad_scrollprogress_hide="now"] {
 	visibility: hidden;
 }

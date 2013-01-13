@@ -35,9 +35,8 @@ com.sppad.scrollprogress.Main = new function() {
         indicator.setAttribute('value', percentage + "%");
         
         let indicatorWrapper = document.getElementById('com_sppad_scrollProgress');
-        indicatorWrapper.style.transitionDuration = "";
-        indicatorWrapper.style.transitionDelay = "";
-        indicatorWrapper.removeAttribute('hide');
+        indicatorWrapper.removeAttribute('com_sppad_scrollprogress_hide');
+        indicatorWrapper.setAttribute('source', 'com_sppad_scrollprogress');
         
         /**
          * Use the bottom of navigator-toolbox rather than the y position of browser
@@ -54,9 +53,7 @@ com.sppad.scrollprogress.Main = new function() {
          * thing?), but want to make sure it works correctly
          */
         setTimeout(function() {
-            indicatorWrapper.style.transitionDuration = "0.3s";
-            indicatorWrapper.style.transitionDelay = "0.4s";
-            indicatorWrapper.setAttribute('hide', 'fadeout');    
+            indicatorWrapper.setAttribute('com_sppad_scrollprogress_hide', 'fadeout');    
         }, 1);
     };
     

@@ -23,11 +23,13 @@ com.sppad.scrollprogress.Main = new function() {
         
         let scrollY = content.scrollY;
         let scrollMaxY = content.scrollMaxY;
-        let percentage = ((scrollY / scrollMaxY) * 100).toFixed();
         
         // Nothing to do here
         if(scrollMaxY == 0)
             return;
+        
+        let percentage = ((scrollY / scrollMaxY) * 100).toFixed();
+        percentage = Math.min(percentage, 100);
         
         let indicator = document.getElementById('com_sppad_scrollProgress_label');
         indicator.setAttribute('value', percentage + "%");

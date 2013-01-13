@@ -17,8 +17,8 @@
 
 #com_sppad_scrollProgress[hide="fadeout"] {
 	opacity: 0;
-	transition-duration: .3s;
-	transition-delay: 0.4s;
+	transition-duration: .6s;
+	transition-delay: 1.4s;
 }
 
 #com_sppad_scrollProgress[hide="now"] {

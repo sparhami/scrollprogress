@@ -4,7 +4,8 @@
       <Description about="urn:mozilla:install-manifest"
         em:id="scrollprogress@com.sppad"
         em:type="2"
-        em:version="$VERSION">
+        em:version="$VERSION"
+        em:optionsURL="chrome://scrollprogress/content/preferences/config.xul">
          
         <!-- Target Application this extension can install into,   
              with minimum and maximum supported versions. -->   
@@ -12,7 +13,7 @@
           <Description>  
             <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>  
             <em:minVersion>16.0</em:minVersion>  
-            <em:maxVersion>21.0a1</em:maxVersion>  
+            <em:maxVersion>23.*</em:maxVersion>  
           </Description>  
         </em:targetApplication>  
          

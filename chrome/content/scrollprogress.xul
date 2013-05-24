@@ -6,9 +6,11 @@
 <overlay id="scrollprogress"
 	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
+	<script type="application/x-javascript" src="utils.js" />
+	<script type="application/x-javascript" src="preferences/preferences.js" />
 	<script type="application/x-javascript" src="scrollprogress.js" />
 
-	<hbox id="browser">
+	<hbox id="appcontent">
 		<hbox id="com_sppad_scrollProgress">
 			<label id="com_sppad_scrollProgress_label" />
 		</hbox>

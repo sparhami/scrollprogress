@@ -10,6 +10,7 @@ com.sppad.scrollprogress.Main = new function() {
     const SCROLL_UPDATE_PERIOD = 100;
     
     var self = this;
+    self.prefs = com.sppad.scrollprogress.CurrentPrefs;
     
     // Used to prevent resizing too often
     self.lastUpdateTime;
@@ -28,13 +29,7 @@ com.sppad.scrollprogress.Main = new function() {
          indicatorWrapper.removeAttribute('com_sppad_scrollprogress_hide');
          indicatorWrapper.setAttribute('source', source);
          
-         /*
-          * Use the bottom of navigator-toolbox rather than the y position of browser
-          * to handle the Toolbar Autohide add-on.
-          */
-         let navbar = document.getElementById('navigator-toolbox');
-         let yOffset = navbar.boxObject.y + navbar.boxObject.height;
-         indicatorWrapper.style.top = yOffset + "px";
+         self.setOffsets(indicatorWrapper);
          
          /*
           * Want to make sure that the css rule for attribute removal (setting
@@ -59,6 +54,22 @@ com.sppad.scrollprogress.Main = new function() {
         
         let percentage = Math.min(((scrollY / scrollMaxY) * 100).toFixed(), 100);
         self.showIndicator(percentage + "%", "com_sppad_scrollprogress_scroll");
+    };
+    
+
+    /**
+	 * Use the bottom of navigator-toolbox / top of browser-bottom-box
+	 * rather than the y position of browser to handle the Toolbar Autohide
+	 * add-on.
+	 */
+    this.setOffsets = function(indicatorWrapper) {
+        let navbar = document.getElementById('navigator-toolbox');
+        let topOffset = navbar.boxObject.y + navbar.boxObject.height;
+		let bottomBox = document.getElementById('browser-bottombox');
+	    let bottomoffset = bottomBox.boxObject.height;
+	    
+        indicatorWrapper.style.marginTop = topOffset + "px";
+        indicatorWrapper.style.marginBottom = bottomoffset + "px";
     };
     
     this.showZoomIndicator = function() {

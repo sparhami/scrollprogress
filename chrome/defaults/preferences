@@ -1,0 +1,12 @@
+pref('extensions.scrollprogress.position.top', "true");
+pref('extensions.scrollprogress.position.right', "true");
+pref('extensions.scrollprogress.style.color', "rgb(90, 90. 90");
+pref('extensions.scrollprogress.style.opacity', 0.8);
+pref('extensions.scrollprogress.style.size', 400);
+pref('extensions.scrollprogress.style.borderColor', "rgb(255, 255, 255)");
+pref('extensions.scrollprogress.style.borderWidth', 2);
+pref('extensions.scrollprogress.style.zoom.holdTime', 1000);
+pref('extensions.scrollprogress.style.zoom.fadeTime', 300);
+pref('extensions.scrollprogress.style.scroll.holdTime', 400)
+pref('extensions.scrollprogress.style.scroll.fadeTime', 300);
+

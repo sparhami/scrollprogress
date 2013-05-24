@@ -1,0 +1,8 @@
+<!ENTITY units.pixels "px">
+<!ENTITY units.milliseconds "ms">
+
+<!ENTITY preference.window.title "ScrollProgress Preferences">
+<!ENTITY preference.stylePrefPane.label "Style">
+
+<!ENTITY preference.timing.label "Timing">	
+<!ENTITY preference.style.zoom.holdTime.label "Hold time during zoom">

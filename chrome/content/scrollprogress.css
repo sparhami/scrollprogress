@@ -2,6 +2,5 @@
 
 #com_sppad_scrollProgress {
 	position: fixed;
-	right: 0;
 	pointer-events: none;
 }

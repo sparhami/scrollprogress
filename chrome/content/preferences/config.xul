@@ -34,22 +34,6 @@
 		<groupbox>
 
 		</groupbox>
-		<groupbox>
-			<caption label="&preference.timing.label;" />
-			<hbox align="center">
-				<label
-					value="&preference.style.zoom.holdTime.label;"
-					flex="1" />
-				<textbox
-					type="number"
-					min="100"
-					max="2000"
-					width="66"
-					preference="extensions.scrollprogress.style.zoom.holdTime" />
-				<label
-					value="&units.milliseconds;" />
-			</hbox>
-		</groupbox>
 	</prefpane>
 
 </prefwindow>

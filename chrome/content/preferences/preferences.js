@@ -9,10 +9,22 @@ com.sppad.scrollprogress.PREF_WINDOW_FILE = "chrome://scrollprogress/content/pre
 com.sppad.scrollprogress.PREF_WINDOW_ID = "scrollprogress-preferences-window";
 com.sppad.scrollprogress.PREF_BRANCH = "extensions.scrollprogress.";
 com.sppad.scrollprogress.PREFS = {
-    position : {
-    	top : true,
-		right : true,
-    },
+    position: 'top-right',
+	verticalOffset: 0,
+	horizontalOffset: 0,
+
+	fontSize: 400,
+	fontWeight: 900,
+	textShadowWidth: 2,
+	textShadowColor: 'white',
+
+	color: 'rgb(90, 90, 90)',
+	opacity: 80,
+
+	zoomFadeTime: 300,
+	zoomFadeDelay: 1000,
+	scrollFadeTime: 300,
+	scrollFadeDelay: 400,
 };
 
 /**
@@ -75,8 +87,6 @@ com.sppad.scrollprogress.Preferences = new function() {
                 com.sppad.scrollprogress.CurrentPrefs[name] = _getPreference(branch,
                         name);
                 
-                dump("pref change " + name + " " + com.sppad.scrollprogress.CurrentPrefs[name] + "\n");
-
                 self._eventSupport.fire({
                     'name' : name,
                     'value' : com.sppad.scrollprogress.CurrentPrefs[name]
@@ -144,7 +154,6 @@ com.sppad.scrollprogress.Preferences = new function() {
     };
 
     let _getPreference = function(branch, preference) {
-
         switch (branch.getPrefType(preference)) {
             case Services.prefs.PREF_BOOL:
                 return branch.getBoolPref(preference);

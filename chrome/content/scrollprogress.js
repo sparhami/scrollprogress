@@ -63,13 +63,17 @@ com.sppad.scrollprogress.Main = new function() {
 	 * add-on.
 	 */
     this.setOffsets = function(indicatorWrapper) {
-        let navbar = document.getElementById('navigator-toolbox');
-        let topOffset = navbar.boxObject.y + navbar.boxObject.height;
-		let bottomBox = document.getElementById('browser-bottombox');
-	    let bottomoffset = bottomBox.boxObject.height;
-	    
-        indicatorWrapper.style.marginTop = topOffset + "px";
-        indicatorWrapper.style.marginBottom = bottomoffset + "px";
+    	if(/bottom/.test(self.prefs.position)) {
+    		let bottomBox = document.getElementById('browser-bottombox');
+    	    let bottomoffset = bottomBox.boxObject.height;
+
+            indicatorWrapper.style.marginBottom = bottomoffset + "px";
+    	} else {
+            let navbar = document.getElementById('navigator-toolbox');
+            let topOffset = navbar.boxObject.y + navbar.boxObject.height;
+    	
+            indicatorWrapper.style.marginTop = topOffset + "px";
+    	}
     };
     
     this.showZoomIndicator = function() {
@@ -144,5 +148,6 @@ com.sppad.scrollprogress.Main = new function() {
 };
 
 window.addEventListener("load", function() {
+	com.sppad.scrollprogress.Appearance.setup();
     com.sppad.scrollprogress.Main.setup();
 }, false);

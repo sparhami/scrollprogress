@@ -28,7 +28,7 @@ com.sppad.scrollprogress.Appearance = new function() {
                 this.setPosition();
                 break;
             case 'fontSize':
-            	self.node.style.fontSize = value + "%";
+            	self.node.style.fontSize = value + "pt";
             	break;
             case 'fontWeight':
             	self.node.style.fontWeight = value;

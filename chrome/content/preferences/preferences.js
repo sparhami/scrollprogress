@@ -13,18 +13,13 @@ com.sppad.scrollprogress.PREFS = {
 	verticalOffset: 0,
 	horizontalOffset: 0,
 
-	fontSize: 400,
+	fontSize: 52,
 	fontWeight: 900,
 	textShadowWidth: 2,
 	textShadowColor: 'white',
 
 	color: 'rgb(90, 90, 90)',
 	opacity: 80,
-
-	zoomFadeTime: 300,
-	zoomFadeDelay: 1000,
-	scrollFadeTime: 300,
-	scrollFadeDelay: 400,
 };
 
 /**

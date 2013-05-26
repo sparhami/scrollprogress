@@ -1,0 +1,25 @@
+#fontPreferences {
+	margin-right: 1em;	
+}
+
+#positionBox {
+	width: 18em;
+	height: 5em;
+}
+
+.right {
+	-moz-box-direction: reverse;
+}
+
+#positionBox radio {
+	width: 9em;
+	height: 2.5em;
+}
+
+#positionBox radio.right {
+	padding-left: 0.5em;
+}
+
+#positionBox radio.left {
+	padding-right: 0.5em;
+}

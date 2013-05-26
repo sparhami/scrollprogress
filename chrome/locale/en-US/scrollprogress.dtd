@@ -1,6 +1,29 @@
 <!ENTITY units.pixels "px">
+<!ENTITY units.point "pt">
 <!ENTITY units.milliseconds "ms">
 
 <!ENTITY preference.window.title "ScrollProgress Preferences">
 <!ENTITY preference.stylePrefPane.label "Style">
 
+<!ENTITY preference.text.label "Text Style">
+<!ENTITY preference.opacity.label "Opacity">
+<!ENTITY preference.color.label "Color">
+
+<!ENTITY preference.size.label "Text Size">
+<!ENTITY preference.fontSize.label "Font Size">
+<!ENTITY preference.fontWeight.label "Font Weight">
+
+<!ENTITY preference.border.label "Text Border Style">
+<!ENTITY preference.textShadowWidth.label "Width">
+<!ENTITY preference.textShadowColor.label "Color">
+
+
+<!ENTITY preference.position.label "Position">
+<!ENTITY preference.position.topLeft.label "Top Left">
+<!ENTITY preference.position.topRight.label "Top Right">
+<!ENTITY preference.position.bottomLeft.label "Bottom Left">
+<!ENTITY preference.position.bottomRight.label "Bottom Right">
+
+<!ENTITY preference.offset.label "Offset">
+<!ENTITY preference.verticalOffset.label "Vertical">
+<!ENTITY preference.horizontalOffset.label "Horizontal">

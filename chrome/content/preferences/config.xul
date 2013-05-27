@@ -10,6 +10,7 @@
 ]>
 
 <prefwindow
+	id="scrollProgressPreferences"
 	title="&preference.window.title;"
 	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 

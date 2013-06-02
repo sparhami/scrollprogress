@@ -1,33 +1,20 @@
 #com_sppad_scrollProgress[source="com_sppad_scrollprogress_zoom"],
 #com_sppad_scrollProgress[source="com_sppad_scrollprogress_scroll"] {
-	color: rgb(90, 90, 90);
-	opacity: .8;
-
-	font-size: 400%;
-	font-weight: 900;
-	
 	transition-property: opacity;
 	transition-timing-function: ease-out;
-	
-	text-shadow:
-	-2px -2px 0 white,  
-    +2px -2px 0 white,
-    -2px +2px 0 white,
-    +2px +2px 0 white;
 }
 
 #com_sppad_scrollProgress[source="com_sppad_scrollprogress_zoom"][com_sppad_scrollprogress_hide="fadeout"] {
 	opacity: 0 !important;
-	transition-duration: 0.3s;
     transition-delay: 1.0s;
 }
 
 #com_sppad_scrollProgress[source="com_sppad_scrollprogress_scroll"][com_sppad_scrollprogress_hide="fadeout"] {
 	opacity: 0 !important;
-	transition-duration: 0.3s;
     transition-delay: 0.4s;
 }
 
+#com_sppad_scrollProgress:not([source]),
 #com_sppad_scrollProgress[source="com_sppad_scrollprogress_zoom"][com_sppad_scrollprogress_hide="now"],
 #com_sppad_scrollProgress[source="com_sppad_scrollprogress_scroll"][com_sppad_scrollprogress_hide="now"] {
 	visibility: hidden;

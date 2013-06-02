@@ -9,156 +9,59 @@
 %mainDTD;
 ]>
 
-<prefwindow
-	id="scrollProgressPreferences"
-	title="&preference.window.title;"
+<prefwindow id="scrollProgressPreferences" title="&preference.window.title;"
 	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
-	<prefpane
-		id="com_sppad_scrollprogress_StylePrefPane"
-		label="&preference.stylePrefPane.label;">
+	<prefpane id="com_sppad_scrollprogress_StylePrefPane" label="&preference.stylePrefPane.label;">
 		<preferences>
-			<preference
-				id="extensions.scrollprogress.color"
-				name="extensions.scrollprogress.color"
+			<preference id="extensions.scrollprogress.color" name="extensions.scrollprogress.color"
 				type="string" />
-			<preference
-				id="extensions.scrollprogress.opacity"
-				name="extensions.scrollprogress.opacity"
+			<preference id="extensions.scrollprogress.opacity" name="extensions.scrollprogress.opacity"
 				type="int" />
-			<preference
-				id="extensions.scrollprogress.fontSize"
-				name="extensions.scrollprogress.fontSize"
+			<preference id="extensions.scrollprogress.fontSize" name="extensions.scrollprogress.fontSize"
 				type="int" />
-			<preference
-				id="extensions.scrollprogress.fontWeight"
-				name="extensions.scrollprogress.fontWeight"
-				type="int" />
-			<preference
-				id="extensions.scrollprogress.textShadowColor"
-				name="extensions.scrollprogress.textShadowColor"
+			<preference id="extensions.scrollprogress.fontWeight"
+				name="extensions.scrollprogress.fontWeight" type="int" />
+			<preference id="extensions.scrollprogress.textShadowColor"
+				name="extensions.scrollprogress.textShadowColor" type="string" />
+			<preference id="extensions.scrollprogress.textShadowWidth"
+				name="extensions.scrollprogress.textShadowWidth" type="int" />
+			<preference id="extensions.scrollprogress.position" name="extensions.scrollprogress.position"
 				type="string" />
-			<preference
-				id="extensions.scrollprogress.textShadowWidth"
-				name="extensions.scrollprogress.textShadowWidth"
-				type="int" />
-			<preference
-				id="extensions.scrollprogress.position"
-				name="extensions.scrollprogress.position"
-				type="string" />
-			<preference
-				id="extensions.scrollprogress.verticalOffset"
-				name="extensions.scrollprogress.verticalOffset"
-				type="int" />
-			<preference
-				id="extensions.scrollprogress.horizontalOffset"
-				name="extensions.scrollprogress.horizontalOffset"
+			<preference id="extensions.scrollprogress.verticalOffset"
+				name="extensions.scrollprogress.verticalOffset" type="int" />
+			<preference id="extensions.scrollprogress.horizontalOffset"
+				name="extensions.scrollprogress.horizontalOffset" type="int" />
+			<preference id="extensions.scrollprogress.transitionDuration"
+				name="extensions.scrollprogress.transitionDuration" type="int" />
+
+			<preference id="extensions.scrollprogress.borderColor"
+				name="extensions.scrollprogress.borderColor" type="string" />
+			<preference id="extensions.scrollprogress.borderWidth"
+				name="extensions.scrollprogress.borderWidth" type="int" />
+			<preference id="extensions.scrollprogress.borderRadius"
+				name="extensions.scrollprogress.borderRadius" type="int" />
+
+			<preference id="extensions.scrollprogress.backgroundColor"
+				name="extensions.scrollprogress.backgroundColor" type="string" />
+			<preference id="extensions.scrollprogress.padding" name="extensions.scrollprogress.padding"
 				type="int" />
 		</preferences>
 
-		<hbox>
-			<vbox id="fontPreferences">
-				<groupbox>
-					<caption label="&preference.size.label;" />
-					<hbox align="center">
-						<label
-							value="&preference.fontSize.label;"
-							flex="1" />
-						<textbox
-							type="number"
-							min="1"
-							max="96"
-							width="48"
-							preference="extensions.scrollprogress.fontSize" />
-						<label value="&units.point;" />
-					</hbox>
-					<hbox align="center">
-						<label
-							value="&preference.fontWeight.label;"
-							flex="1" />
-						<textbox
-							type="number"
-							min="100"
-							max="900"
-							width="64"
-							preference="extensions.scrollprogress.fontWeight" />
-					</hbox>
-				</groupbox>
-				<groupbox>
-					<caption label="&preference.text.label;" />
-					<hbox align="center">
-						<label
-							value="&preference.opacity.label;"
-							flex="1" />
-						<textbox
-							type="number"
-							min="0"
-							max="100"
-							width="64"
-							preference="extensions.scrollprogress.opacity" />
-					</hbox>
-					<hbox align="center">
-						<label
-							value="&preference.color.label;"
-							flex="1" />
-						<textbox
-							width="256"
-							preference="extensions.scrollprogress.color" />
-					</hbox>
-				</groupbox>
-				<groupbox>
-					<caption label="&preference.border.label;" />
-					<hbox align="center">
-						<label
-							value="&preference.textShadowWidth.label;"
-							flex="1" />
-						<textbox
-							type="number"
-							min="0"
-							max="2"
-							width="32"
-							preference="extensions.scrollprogress.textShadowWidth" />
-						<label value="&units.pixels;" />
-					</hbox>
-					<hbox align="center">
-						<label
-							value="&preference.textShadowColor.label;"
-							flex="1" />
-						<textbox
-							width="256"
-							preference="extensions.scrollprogress.textShadowColor" />
-					</hbox>
-				</groupbox>
-			</vbox>
+		<hbox id="preferenceColumns">
 			<vbox id="positionPreferences">
 				<groupbox>
 					<caption label="&preference.position.label;" />
 
 					<radiogroup preference="extensions.scrollprogress.position">
 						<stack id="positionBox">
-							<radio
-								class="left"
-								top="0"
-								left="0"
-								value="top-left"
+							<radio class="left" top="0" left="0" value="top-left"
 								label="&preference.position.topLeft.label;" />
-							<radio
-								class="right"
-								top="0"
-								right="0"
-								value="top-right"
+							<radio class="right" top="0" right="0" value="top-right"
 								label="&preference.position.topRight.label;" />
-							<radio
-								class="left"
-								bottom="0"
-								left="0"
-								value="bottom-left"
+							<radio class="left" bottom="0" left="0" value="bottom-left"
 								label="&preference.position.bottomLeft.label;" />
-							<radio
-								class="right"
-								bottom="0"
-								right="0"
-								value="bottom-right"
+							<radio class="right" bottom="0" right="0" value="bottom-right"
 								label="&preference.position.bottomRight.label;" />
 						</stack>
 					</radiogroup>
@@ -166,32 +69,105 @@
 				<groupbox>
 					<caption label="&preference.offset.label;" />
 					<hbox align="center">
-						<label
-							value="&preference.verticalOffset.label;"
-							flex="1" />
-						<textbox
-							type="number"
-							min="0"
-							max="100"
-							width="64"
+						<label value="&preference.verticalOffset.label;" flex="1" />
+						<textbox type="number" min="-99" max="100" width="64"
 							preference="extensions.scrollprogress.verticalOffset" />
 						<label value="&units.pixels;" />
 					</hbox>
 					<hbox align="center">
-						<label
-							value="&preference.horizontalOffset.label;"
-							flex="1" />
-						<textbox
-							type="number"
-							min="0"
-							max="100"
-							width="64"
+						<label value="&preference.horizontalOffset.label;" flex="1" />
+						<textbox type="number" min="-99" max="100" width="64"
 							preference="extensions.scrollprogress.horizontalOffset" />
 						<label value="&units.pixels;" />
+					</hbox>
+				</groupbox>
+				<groupbox>
+					<caption label="&preference.transition.label;" />
+					<hbox align="center">
+						<label value="&preference.transitionDuration.label;" flex="1" />
+						<textbox type="number" min="0" max="999" width="64"
+							preference="extensions.scrollprogress.transitionDuration" />
+						<label value="&units.milliseconds;" />
+					</hbox>
+				</groupbox>
+			</vbox>
+
+			<vbox id="fontPreferences">
+				<groupbox>
+					<caption label="&preference.textSize.label;" />
+					<hbox align="center">
+						<label value="&preference.fontSize.label;" flex="1" />
+						<textbox type="number" min="0" max="96" width="48"
+							preference="extensions.scrollprogress.fontSize" />
+						<label value="&units.point;" />
+					</hbox>
+					<hbox align="center">
+						<label value="&preference.fontWeight.label;" flex="1" />
+						<textbox type="number" min="0" max="900" width="64"
+							preference="extensions.scrollprogress.fontWeight" />
+					</hbox>
+				</groupbox>
+				<groupbox>
+					<caption label="&preference.text.label;" />
+					<hbox align="center">
+						<label value="&preference.opacity.label;" flex="1" />
+						<textbox type="number" min="0" max="100" width="64"
+							preference="extensions.scrollprogress.opacity" />
+					</hbox>
+					<hbox align="center">
+						<label value="&preference.color.label;" flex="1" />
+						<textbox width="256" preference="extensions.scrollprogress.color" />
+					</hbox>
+				</groupbox>
+				<groupbox>
+					<caption label="&preference.textBorder.label;" />
+					<hbox align="center">
+						<label value="&preference.textShadowWidth.label;" flex="1" />
+						<textbox type="number" min="0" max="2" width="32"
+							preference="extensions.scrollprogress.textShadowWidth" />
+						<label value="&units.pixels;" />
+					</hbox>
+					<hbox align="center">
+						<label value="&preference.textShadowColor.label;" flex="1" />
+						<textbox width="256" preference="extensions.scrollprogress.textShadowColor" />
+					</hbox>
+				</groupbox>
+			</vbox>
+
+			<vbox id="backgroundPreferences">
+				<groupbox>
+					<caption label="&preference.background.label;" />
+					<hbox align="center">
+						<label value="&preference.padding.label;" flex="1" />
+						<textbox type="number" min="0" max="9" width="32"
+							preference="extensions.scrollprogress.padding" />
+						<label value="&units.pixels;" />
+					</hbox>
+					<hbox align="center">
+						<label value="&preference.backgroundColor.label;" flex="1" />
+						<textbox width="256" preference="extensions.scrollprogress.backgroundColor" />
+					</hbox>
+				</groupbox>
+				<groupbox>
+					<caption label="&preference.border.label;" />
+					<hbox align="center">
+						<label value="&preference.borderWidth.label;" flex="1" />
+						<textbox type="number" min="0" max="2" width="32"
+							preference="extensions.scrollprogress.borderWidth" />
+						<label value="&units.pixels;" />
+					</hbox>
+					<hbox align="center">
+						<label value="&preference.borderRadius.label;" flex="1" />
+						<textbox type="number" min="0" max="9" width="32"
+							preference="extensions.scrollprogress.borderRadius" />
+						<label value="&units.pixels;" />
+					</hbox>
+					<hbox align="center">
+						<label value="&preference.borderColor.label;" flex="1" />
+						<textbox width="256" preference="extensions.scrollprogress.borderColor" />
 					</hbox>
 				</groupbox>
 			</vbox>
 		</hbox>
 	</prefpane>
-
 </prefwindow>

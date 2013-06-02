@@ -4,3 +4,7 @@
 	position: fixed;
 	pointer-events: none;
 }
+
+#com_sppad_scrollProgress_label {
+	text-align: left;
+}

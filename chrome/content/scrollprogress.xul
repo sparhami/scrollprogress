@@ -10,10 +10,13 @@
 	<script type="application/x-javascript" src="preferences/preferences.js" />
 	<script type="application/x-javascript" src="appearance.js" />
 	<script type="application/x-javascript" src="scrollprogress.js" />
-	
+
 	<hbox id="appcontent">
 		<hbox id="com_sppad_scrollProgress">
-			<label id="com_sppad_scrollProgress_label" />
+			<hbox id="com_sppad_scrollProgress_info">
+				<box flex="1" />
+				<label id="com_sppad_scrollProgress_label" />
+			</hbox>
 		</hbox>
 	</hbox>
 </overlay>

@@ -9,14 +9,13 @@
 <!ENTITY preference.opacity.label "Opacity">
 <!ENTITY preference.color.label "Color">
 
-<!ENTITY preference.size.label "Text Size">
+<!ENTITY preference.textSize.label "Text Size">
 <!ENTITY preference.fontSize.label "Font Size">
 <!ENTITY preference.fontWeight.label "Font Weight">
 
-<!ENTITY preference.border.label "Text Border Style">
+<!ENTITY preference.textBorder.label "Text Border Style">
 <!ENTITY preference.textShadowWidth.label "Width">
 <!ENTITY preference.textShadowColor.label "Color">
-
 
 <!ENTITY preference.position.label "Position">
 <!ENTITY preference.position.topLeft.label "Top Left">
@@ -27,3 +26,15 @@
 <!ENTITY preference.offset.label "Offset">
 <!ENTITY preference.verticalOffset.label "Vertical">
 <!ENTITY preference.horizontalOffset.label "Horizontal">
+
+<!ENTITY preference.transition.label "Transition Properties">
+<!ENTITY preference.transitionDuration.label "Duration">
+
+<!ENTITY preference.background.label "Background Style">
+<!ENTITY preference.padding.label "Padding">
+<!ENTITY preference.backgroundColor.label "Color">
+
+<!ENTITY preference.border.label "Background Border Style">
+<!ENTITY preference.borderWidth.label "Width">
+<!ENTITY preference.borderRadius.label "Radius">
+<!ENTITY preference.borderColor.label "Color">

@@ -17,6 +17,16 @@ com.sppad.scrollprogress.PREFS = {
 	fontWeight: 900,
 	textShadowWidth: 2,
 	textShadowColor: 'white',
+	
+	padding: 2,
+	backgroundColor: 'transparent',
+
+	borderStyle: 'solid',
+	borderWidth: 1,
+	borderRadius: 3,
+	borderColor: 'transparent',
+	
+	transitionDuration: 300,
 
 	color: 'rgb(90, 90, 90)',
 	opacity: 80,

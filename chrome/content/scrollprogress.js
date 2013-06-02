@@ -24,12 +24,16 @@ com.sppad.scrollprogress.Main = new function() {
     this.showIndicator = function(value, source) {
     	 let indicator = document.getElementById('com_sppad_scrollProgress_label');
          indicator.setAttribute('value', value);
+
+         let infoBox = document.getElementById('com_sppad_scrollProgress_info');
+         infoBox.style.minWidth = ((self.prefs.fontSize * 2.5) + 11) + 'pt';
          
-         let indicatorWrapper = document.getElementById('com_sppad_scrollProgress');
-         indicatorWrapper.removeAttribute('com_sppad_scrollprogress_hide');
-         indicatorWrapper.setAttribute('source', source);
+         let indicatorBox = document.getElementById('com_sppad_scrollProgress');
+         indicatorBox.removeAttribute('com_sppad_scrollprogress_hide');
+         indicatorBox.setAttribute('source', source);
+         indicatorBox.style.transitionDuration = '';
          
-         self.setOffsets(indicatorWrapper);
+         self.setOffsets(indicatorBox);
          
          /*
           * Want to make sure that the css rule for attribute removal (setting
@@ -37,9 +41,11 @@ com.sppad.scrollprogress.Main = new function() {
           * not work correctly. It appears to be okay when placed apart (a timing
           * thing?), but want to make sure it works correctly
           */
-         setTimeout(function() {
-             indicatorWrapper.setAttribute('com_sppad_scrollprogress_hide', 'fadeout');    
-         }, 1);	
+         window.clearTimeout(self.hideTimeout);
+         self.hideTimeout = setTimeout(function() {
+             indicatorBox.style.transitionDuration = self.prefs.transitionDuration + 'ms';
+             indicatorBox.setAttribute('com_sppad_scrollprogress_hide', 'fadeout');    
+         }, 150);	
     };
     
     this.showScrollIndicator = function() {
@@ -62,17 +68,17 @@ com.sppad.scrollprogress.Main = new function() {
 	 * rather than the y position of browser to handle the Toolbar Autohide
 	 * add-on.
 	 */
-    this.setOffsets = function(indicatorWrapper) {
+    this.setOffsets = function(indicatorBox) {
     	if(/bottom/.test(self.prefs.position)) {
     		let bottomBox = document.getElementById('browser-bottombox');
     	    let bottomoffset = bottomBox.boxObject.height;
 
-            indicatorWrapper.style.marginBottom = bottomoffset + "px";
+            indicatorBox.style.marginBottom = bottomoffset + "px";
     	} else {
             let navbar = document.getElementById('navigator-toolbox');
             let topOffset = navbar.boxObject.y + navbar.boxObject.height;
     	
-            indicatorWrapper.style.marginTop = topOffset + "px";
+            indicatorBox.style.marginTop = topOffset + "px";
     	}
     };
     

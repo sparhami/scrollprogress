@@ -28,16 +28,17 @@ com.sppad.scrollprogress.Appearance = new function() {
                 this.setPosition();
                 break;
             case 'fontSize':
-            	self.node.style.fontSize = value + "pt";
-            	break;
             case 'fontWeight':
-            	self.node.style.fontWeight = value;
-            	break;
             case 'color':
-            	self.node.style.color = value;
-            	break;
             case 'opacity':
-            	self.node.style.opacity = (value / 100);
+            case 'backgroundColor':
+            case 'padding':
+            case 'borderStyle':
+            case 'borderColor':
+            case 'borderWidth':
+            case 'borderRadius':
+            case 'transitionDuration':
+            	self.node.style[name] = self.getValue(name, value);
             	break;
             case 'textShadowWidth':
             case 'textShadowColor':
@@ -48,17 +49,38 @@ com.sppad.scrollprogress.Appearance = new function() {
         }
     };
     
+    this.getValue = function(name, value) {
+        switch (name) {
+        	case 'padding':
+        	case 'borderWidth':
+        	case 'borderRadius':
+        		return value + "px";
+	        case 'fontSize':
+	        	return value + "pt";
+	        case 'opacity':
+	        	return (value / 100);
+	        case 'transitionDuration':
+	        	return value + 'ms';
+	        default:
+	            return value;
+	    }
+    };
+    
     this.setTextShadow = function() {
-    	let posWidth = self.prefs.textShadowWidth + "px ";
-    	let negWidth = -self.prefs.textShadowWidth + "px ";
-    	let color = self.prefs.textShadowColor;
-
     	let textShadow = '';
-    	textShadow += negWidth + negWidth + "0 " + color + ", ";
-    	textShadow += posWidth + negWidth + "0 " + color + ", ";
-    	textShadow += negWidth + posWidth + "0 " + color + ", ";
-    	textShadow += posWidth + posWidth + "0 " + color;
-    	
+    	let width = self.prefs.textShadowWidth;
+
+    	if(width > 0) {
+    	  	let posWidth = width + "px ";
+        	let negWidth = -width + "px ";
+        	let color = self.prefs.textShadowColor;
+    		
+        	textShadow += negWidth + negWidth + "0 " + color + ", ";
+        	textShadow += posWidth + negWidth + "0 " + color + ", ";
+        	textShadow += negWidth + posWidth + "0 " + color + ", ";
+        	textShadow += posWidth + posWidth + "0 " + color;
+    	}
+    		
     	self.node.style.textShadow = textShadow;
     };
     
@@ -82,7 +104,14 @@ com.sppad.scrollprogress.Appearance = new function() {
                      'fontWeight',
                      'textShadowWidth',
                      'color',
-                     'opacity'];
+                     'opacity',
+                     'padding',
+                     'backgroundColor',
+                     'borderColor',
+                     'borderStyle',
+                     'borderWidth',
+                     'borderRadius',
+                     'transitionDuration'];
         
         prefs.forEach(function(pref) {
             self.prefChanged(pref, com.sppad.scrollprogress.CurrentPrefs[pref]);

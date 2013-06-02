@@ -1,4 +1,4 @@
-#fontPreferences {
+#preferenceColumns > :not(:last-child) {
 	margin-right: 1em;	
 }
 
